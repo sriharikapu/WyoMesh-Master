@@ -10,7 +10,7 @@ contract Master {
         string ipfs_hash;
     }
 
-    address auditor;
+    address public auditor;
     mapping(address => Device) devices;
     IPFS_Hash[] ipfs_hashes;
     uint index;
@@ -36,6 +36,5 @@ contract Master {
         ipfs_hashes[index].ipfs_hash = newIPFS_Hash;
         index++;
     }
-    
-}
 
+}

@@ -17,8 +17,8 @@ module.exports = {
   // to customize your Truffle configuration!
   networks: {
     development: {
-      host: "http://95663c8e.ngrok.io/",
-      port: 7545,
+      host: "95663c8e.ngrok.io",
+      port: 80,
       network_id: "*" // Match any network id
     }
   }
