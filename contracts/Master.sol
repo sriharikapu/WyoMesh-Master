@@ -16,9 +16,8 @@ contract Master {
     uint index;
 
     /// Create a new Master and auditor with $(_numProposals) different ipfs_hashes.
-    constructor(uint8 _numHashes) public {
+    constructor() public {
         auditor = msg.sender;
-        ipfs_hashes.length = _numHashes;
         index = 0;
     }
 
@@ -31,7 +30,7 @@ contract Master {
 
 
     /// Give a submit a IPFS_Hash $(to).
-    function submit(string newIPFS_Hash) public {
+    function submitHash(string newIPFS_Hash) public {
         if(!devices[msg.sender].permissioned || index >= ipfs_hashes.length-1) return;
         ipfs_hashes[index].ipfs_hash = newIPFS_Hash;
         index++;
