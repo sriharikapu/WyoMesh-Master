@@ -1,3 +1,6 @@
+// for use with `truffle exec`
+// BROKEN
+
 var Master = artifacts.require("./contracts/Master.sol");
 
 module.exports = function(callback) {
