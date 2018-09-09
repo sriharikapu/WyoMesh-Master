@@ -15,4 +15,15 @@ async function getCurrentAccount(){
     {
     from: currentAccounts[0],
     gasPrice});
+
+
+    MasterContract.methods.addDevice('0x0dF9b5b8b38bAFF8D729Bcf853EF54099F88a3ce').send({from: currentAccounts[0]});
+    MasterContract.methods.submitHash('temp is 90').send({from: currentAccounts[1]});
+    MasterContract.methods.getHash(0).call({from: currentAccounts[1]})
+    .then(console.log);
+
+    MasterContract.methods.addDevice('0x6a58B9d9d4961B5426CcCB57890c7c789373fa18').send({from: '0x8D8d94dF3669F804F27f5090e67eDDFb9a4e80D0'});
+    MasterContract.methods.submitHash('temp is 91').send({from: '0x6a58B9d9d4961B5426CcCB57890c7c789373fa18'});
+    MasterContract.methods.getHash(1).call({from: '0x6a58B9d9d4961B5426CcCB57890c7c789373fa18'})
+    .then(console.log);
 }
